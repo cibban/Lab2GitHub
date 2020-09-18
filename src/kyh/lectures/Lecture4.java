@@ -29,7 +29,16 @@ public class Lecture4 {
         }
     }
 
+    public static int sum(int i) {
+        if(i == 0) {
+            return 0;
+        } else {
+            return sum(i-1)+i;
+        }
+    }
+
     public static void main(String[] args) {
-        printFile("Varför är den gode dum?");
+        System.out.println(sum(4));
+        //printFile("Varför är den gode dum?");
     }
 }

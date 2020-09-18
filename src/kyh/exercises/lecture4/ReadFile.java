@@ -15,28 +15,18 @@ import java.util.Scanner;
 
 public class ReadFile {
     public static void main(String[] args) {
+        try {
             // Skapa ett File-object, som styr vilken fil vi vill läsa
-            File file = new File("textfile.txt");
 
             // Använd scanner för att läsa filen
 
- 
- 
-
             // Skriv ut filen, rad för rad
-
             // Så länge scannern har en nästa rad:
             // Läs raden från scannern, skriv ut på skärmen
 
             // Stäng filen
-        try {
-            Scanner sc = new Scanner(file);
-
-            while (sc.hasNextLine()) {
-                System.out.println(sc.nextLine());
-            }
-
         } catch (Exception e) {
-            e.printStackTrace();        }
+            System.out.println("An error occurred.");
+        }
     }
 }

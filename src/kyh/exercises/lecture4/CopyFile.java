@@ -2,6 +2,7 @@ package kyh.exercises.lecture4;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.util.Scanner;
 
 /*
  Kopiera en fil till en annan
@@ -17,11 +18,21 @@ public class CopyFile {
             // Sätt upp vilka filer vi vill läsa och skriva
             File fromFile = new File("CJL.txt");
             FileWriter toFile = new FileWriter("CJL_copy.txt");
-            
+
+            Scanner sc = new Scanner(fromFile);
+            String s = "";
+            while(sc.hasNextLine()) {
+                s = sc.nextLine();
+                System.out.println(s);
+                toFile.write(s + "\n");
+            }
+
             // Så länge fromFile har en rad:
             // Läs raden från fromFile
             // Skriv raden till toFile
 
+            toFile.close();
+            sc.close();
             // Stäng fromFile
             // Stäng toFile
 
