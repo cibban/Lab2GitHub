@@ -15,6 +15,7 @@ public class FileCrawler {
             Scanner userInput = new Scanner(System.in);
             String searchString;
 
+
             // Be användaren om en söksträng.
             System.out.println("Välkommen till filKryparen!");
             System.out.print("Skriv in ett sökord: ");
@@ -32,6 +33,7 @@ public class FileCrawler {
         System.out.println(hitCount + " filer hittades.");
     }
 
+<<<<<<< HEAD
     public static void crawlFileTree(File filePath, String searchString) {
 
         try {
@@ -59,9 +61,28 @@ public class FileCrawler {
                         hitCount++;
                         return;
                     }
+=======
+    public static void printInfo(File file, String string) {
+        // Om det är en vanlig fil: Skriv ut namnet på filen
+        // Om det är en mapp: Skriv ut sökvägen på mappen, och gå in i mappen
+
+        if (file.isFile()) {
+            Scanner sc = null;
+            try {
+                sc = new Scanner(file);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            while(sc.hasNextLine()){
+                sc.nextLine();
+                if(sc.findInLine(string) != null){
+                    System.out.println("Fil: " + file.getName());
+                    return;
+>>>>>>> 3410aa076ff780b43f2dde721db1ba1b811d1df5
                 }
             }
 
+<<<<<<< HEAD
             // Kontrollera om filen går att läsa.
             // Om inte, skriv till System.error.
             if(!filePath.canRead()) {
@@ -69,6 +90,10 @@ public class FileCrawler {
             }
         } catch (Exception e) {
             e.printStackTrace();
+=======
+            }
+
+>>>>>>> 3410aa076ff780b43f2dde721db1ba1b811d1df5
         }
     }
 }
