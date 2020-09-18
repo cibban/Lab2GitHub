@@ -17,7 +17,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/textfile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/textfile.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +42,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
@@ -79,6 +83,7 @@
       <workItem from="1600350871331" duration="2031000" />
       <workItem from="1600354574306" duration="20000" />
       <workItem from="1600413028886" duration="2013000" />
+      <workItem from="1600430260590" duration="353000" />
     </task>
     <servers />
   </component>
@@ -98,9 +103,25 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1920" y="174" width="900" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600430537032">
+      <screen x="1920" y="-186" width="900" height="1410" />
+    </state>
+    <state x="1920" y="174" width="900" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.-186.900.1410@1920.-186.900.1410" timestamp="1600430537032" />
+    <state x="2099" y="333" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1600430515090">
+      <screen x="1920" y="-186" width="900" height="1410" />
+    </state>
+    <state x="2099" y="333" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1050/1920.-186.900.1410@1920.-186.900.1410" timestamp="1600430515090" />
+    <state x="2117" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1600430325432">
+      <screen x="1920" y="-186" width="900" height="1410" />
+    </state>
+    <state x="2117" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050/1920.-186.900.1410@1920.-186.900.1410" timestamp="1600430325432" />
     <state x="2150" y="274" key="FileChooserDialogImpl" timestamp="1600354057048">
       <screen x="1920" y="-186" width="900" height="1410" />
     </state>
     <state x="2150" y="274" key="FileChooserDialogImpl/0.0.1920.1050/1920.-186.900.1410@1920.-186.900.1410" timestamp="1600354057048" />
+    <state x="1920" y="93" key="SettingsEditor" timestamp="1600430379462">
+      <screen x="1920" y="-186" width="900" height="1410" />
+    </state>
+    <state x="1920" y="93" key="SettingsEditor/0.0.1920.1050/1920.-186.900.1410@1920.-186.900.1410" timestamp="1600430379462" />
   </component>
 </project>
