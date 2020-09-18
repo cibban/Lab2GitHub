@@ -10,18 +10,21 @@ public class FileCrawler {
         try {
             File startingFolder = new File("./testData/");
 
-            System.out.println("Starting Path: " + startingFolder.getCanonicalPath());
-            System.out.println("Contains: " + Arrays.toString(startingFolder.list()));
+            System.out.println("Hej och välkommen till filKryparen! " + startingFolder.getCanonicalPath());
+            System.out.println("Startsökväg: " + startingFolder.getCanonicalPath());
+            Scanner searchString = new Scanner(System.in);
+            System.out.println("Sökord: ");
             System.out.println("-------");
             System.out.println();
 
-            printInfo(startingFolder);
+            printInfo(startingFolder, searchString);
+
         } catch (Exception e) {
             System.out.println("Oops");
         }
     }
 
-    public static void printInfo(File file) {
+    public static void printInfo(File file, String string) {
         // Om det är en vanlig fil: Skriv ut namnet på filen
         // Om det är en mapp: Skriv ut sökvägen på mappen, och gå in i mappen
 
@@ -33,25 +36,14 @@ public class FileCrawler {
                 e.printStackTrace();
             }
             while(sc.hasNextLine()){
-                        if(sc.findInLine("Vatten") != null){
-                            System.out.println("Fil: " + file.getName());
-                            return;
-                        }
-
-                    }
-        } else if (file.isDirectory()) {
-            try {
-                System.out.println("Mapp: " + file.getCanonicalPath());
-
-                File[] folderContents = file.listFiles();
-                for (int i = 0; i < folderContents.length; i++) {
-                    File f = folderContents[i];
-                    printInfo(f);
+                sc.nextLine();
+                if(sc.findInLine(string) != null){
+                    System.out.println("Fil: " + file.getName());
+                    return;
                 }
 
-            } catch (Exception e) {
-                System.out.println("Oops");
             }
+
         }
     }
 }
