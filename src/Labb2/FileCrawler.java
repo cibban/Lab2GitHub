@@ -1,57 +1,75 @@
 package Labb2;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class FileCrawler {
-    public static void main(String[] args) {
-        try {
-            File startingFolder = new File("./testData/");
 
-            System.out.println("Starting Path: " + startingFolder.getCanonicalPath());
-            System.out.println("Contains: " + Arrays.toString(startingFolder.list()));
+public class FileCrawler {
+
+    // Initiera träffräknare.
+    static int hitCount = 0;
+
+    public static void main(String[] args) {
+            //Initiera variabler
+            File initialPath = new File("./testData/");
+            Scanner userInput = new Scanner(System.in);
+            String searchString;
+
+            // Be användaren om en söksträng.
+            System.out.println("Välkommen till filKryparen!");
+            System.out.print("Skriv in ett sökord: ");
+            searchString = userInput.nextLine();
             System.out.println("-------");
             System.out.println();
 
-            printInfo(startingFolder);
+        try {
+            // Påbörja sökningen.
+            crawlFileTree(initialPath, searchString);
         } catch (Exception e) {
-            System.out.println("Oops");
+            e.printStackTrace();
         }
+        System.out.println();
+        System.out.println(hitCount + " filer hittades.");
     }
 
-    public static void printInfo(File file) {
-        // Om det är en vanlig fil: Skriv ut namnet på filen
-        // Om det är en mapp: Skriv ut sökvägen på mappen, och gå in i mappen
+    public static void crawlFileTree(File filePath, String searchString) {
 
-        if (file.isFile()) {
-            Scanner sc = null;
-            try {
-                sc = new Scanner(file);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            while(sc.hasNextLine()){
-                        if(sc.findInLine("Vatten") != null){
-                            System.out.println("Fil: " + file.getName());
-                            return;
-                        }
+        try {
+            // Om nästa sökväg i listan pekar på en katalog kallar funktionen
+            // på sig själv och fortsätter nedåt.
+            if (filePath.isDirectory()) {
 
-                    }
-        } else if (file.isDirectory()) {
-            try {
-                System.out.println("Mapp: " + file.getCanonicalPath());
-
-                File[] folderContents = file.listFiles();
-                for (int i = 0; i < folderContents.length; i++) {
-                    File f = folderContents[i];
-                    printInfo(f);
+                File[] folderContents = filePath.listFiles();
+                for (File contentPath : folderContents) {
+                    crawlFileTree(contentPath, searchString);
                 }
 
-            } catch (Exception e) {
-                System.out.println("Oops");
+            // Om nästa sökväg i listan är en fil, öppna filen och sök
+            } else if (filePath.isFile()) {
+                Scanner fileScan = new Scanner(filePath);
+
+                // Läs in nästa rad.
+                while(fileScan.hasNextLine()) {
+                    fileScan.nextLine();
+
+                    // Sök efter söksträngen i textraden.
+                    // Vid träff, skriv ut filens sökväg och uppdatera räknaren.
+                    if(searchString.equals(fileScan.findInLine(searchString))) {
+                        System.out.println(filePath.getCanonicalPath());
+                        hitCount++;
+                        return;
+                    }
+                }
             }
+
+            // Kontrollera om filen går att läsa.
+            // Om inte, skriv till System.error.
+            if(!filePath.canRead()) {
+                System.err.println("Fel: Kan inte läsa " + filePath.getCanonicalPath());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
+
