@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class FileCrawler {
 
-    // Initiera träffräknare.
+    // Initiera en global träffräknare.
     static int hitCount = 0;
 
     public static void main(String[] args) {
