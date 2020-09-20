@@ -11,7 +11,7 @@ public class FileCrawler {
 
     public static void main(String[] args) {
             //Initiera variabler
-            File initialPath = new File("./testData/");
+            File initialPath = new File("");
             Scanner userInput = new Scanner(System.in);
             String searchString;
 
