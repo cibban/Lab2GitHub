@@ -49,10 +49,10 @@ public class FileCrawler {
                 }
             }
 
-        // Om nästa sökväg i listan är en fil, öppna filen och sök
+            // Om nästa sökväg i listan är en fil, öppna filen och sök
         } else if (filePath.isFile()) {
             Scanner fileScan;
-                fileScan = new Scanner(filePath);
+            fileScan = new Scanner(filePath);
 
             // Läs in nästa rad.
             while(fileScan.hasNextLine()) {
