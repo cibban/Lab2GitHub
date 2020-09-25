@@ -82,7 +82,6 @@ public class FileCrawler {
                 // Stäng filen.
                 // Debug: System.out.println("Stänger filen " + absolutePath);
                 fileScan.close();
-                System.err.println(absolutePath + " har ingen nästa rad.");
 
             } catch (FileNotFoundException fileNotFoundException) {
                 System.err.println(absolutePath + " finns inte.");
